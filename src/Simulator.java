@@ -31,13 +31,20 @@ public class Simulator {
     public static void main(String args[]){
     	System.out.println("Simulator - Project");
     	Simulator sim = new Simulator();
-    	sim.run();
+		new GUI(sim);
+    	//sim.run();
     }
 
     public void run() {
         for (int i = 0; i < 10000; i++) {
             tick();
         }
+    }
+    
+    public void doSteps(int steps) {
+    	for (int i = 0; i < steps; i++){
+    		tick();
+    	}
     }
 
     private void tick() {
